@@ -34,41 +34,40 @@ int div(int x, int y)
 
 void main()
 {
-    int a;
-    int b;
+
     Console.WriteLine("Calculator");
     Console.WriteLine("Enter first number:");
-    string A = Console.ReadLine();
-    a = int.Parse(A);
+    string firstInput = Console.ReadLine();
+    int firstNumber = int.Parse(firstInput);
     Console.WriteLine("Enter second number:");
-    string B = Console.ReadLine();
-    b = int.Parse(B);
-    Console.WriteLine("Witch function You want to use?");
-    string F = Console.ReadLine();
+    string secondInput = Console.ReadLine();
+    int secondNumber = int.Parse(secondInput);
+    Console.WriteLine("Which function You want to use?");
+    string mathOperation = Console.ReadLine();
 
     int result;
 
-    if (F == "+")
+    if (mathOperation == "+")
     {
-        result = add(a, b);
+        result = add(firstNumber, secondNumber);
         Console.WriteLine(result);
 
     }
-    else if (F == "-")
+    else if (mathOperation == "-")
     {
-        result = sub(a, b);
+        result = sub(firstNumber, secondNumber);
         Console.WriteLine(result);
 
     }
-    else if (F == "*")
+    else if (mathOperation == "*")
     {
-        result = mul(a, b);
+        result = mul(firstNumber, secondNumber);
         Console.WriteLine(result);
 
     }
-    else if (F == "/")
+    else if (mathOperation == "/")
     {
-        result = div(a, b);
+        result = div(firstNumber, secondNumber);
         Console.WriteLine(result);
 
     }
