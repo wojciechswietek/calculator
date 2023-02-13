@@ -1,81 +1,53 @@
-﻿#region add function 
+﻿int add(int x, int y) => x + y;
 
-int add(int x, int y)
+int sub(int x, int y) => x - y;
+
+int mul(int x, int y) => x * y;
+
+int div(int x, int y) => x / y;
+
+int? calculate(int firstNumber, int secondNumber, string mathOperation)
 {
-    return x + y;
+    if (mathOperation == "+")
+    {
+        return add(firstNumber, secondNumber);
+    }
+
+    if (mathOperation == "-")
+    {
+        return sub(firstNumber, secondNumber);
+    }
+
+    if (mathOperation == "*")
+    {
+        return mul(firstNumber, secondNumber);
+    }
+
+    if (mathOperation == "/")
+    {
+        return div(firstNumber, secondNumber);
+    }
+
+    return null;
 }
-
-#endregion
-
-#region sub function
-int sub(int x, int y)
-{
-    return x - y;
-}
-
-#endregion
-
-#region mul function
-int mul(int x, int y)
-{
-    return x * y;
-}
-
-#endregion
-
-#region div function
-
-int div(int x, int y)
-{
-    return x / y;
-}
-
-#endregion
 
 void main()
 {
-
     Console.WriteLine("Calculator");
+
     Console.WriteLine("Enter first number:");
-    string firstInput = Console.ReadLine();
+    var firstInput = Console.ReadLine();
     int firstNumber = int.Parse(firstInput);
+
     Console.WriteLine("Enter second number:");
-    string secondInput = Console.ReadLine();
+    var secondInput = Console.ReadLine();
     int secondNumber = int.Parse(secondInput);
+
     Console.WriteLine("Which function You want to use?");
     string mathOperation = Console.ReadLine();
 
-    int result;
-
-    if (mathOperation == "+")
-    {
-        result = add(firstNumber, secondNumber);
-        Console.WriteLine(result);
-
-    }
-    else if (mathOperation == "-")
-    {
-        result = sub(firstNumber, secondNumber);
-        Console.WriteLine(result);
-
-    }
-    else if (mathOperation == "*")
-    {
-        result = mul(firstNumber, secondNumber);
-        Console.WriteLine(result);
-
-    }
-    else if (mathOperation == "/")
-    {
-        result = div(firstNumber, secondNumber);
-        Console.WriteLine(result);
-
-    }
-    else
-    {
-        Console.WriteLine("Wrong function");
-    }
+    var result = calculate(firstNumber, secondNumber, mathOperation);
+    Console.WriteLine($"Result:{result}");
 }
-
 
 main();
