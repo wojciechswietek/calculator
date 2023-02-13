@@ -1,7 +1,33 @@
-﻿ int add(int x, int y)
+﻿#region add function 
+
+int add(int x, int y)
 {
     return x + y;
 }
 
-Console.WriteLine(add(1,2));
-Console.ReadLine();
+#endregion
+
+#region sub function
+int sub(int x, int y)
+{
+    return x - y;
+}
+
+#endregion
+
+#region mul function
+int mul(int x, int y)
+{
+    return x * y;
+}
+
+#endregion
+
+#region div function
+
+int div(int x, int y)
+{
+    return x / y;
+}
+
+#endregion
