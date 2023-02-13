@@ -1,79 +1,65 @@
-﻿#region add function 
-
-int add(int x, int y)
+﻿int add(int x, int y)
 {
     return x + y;
 }
 
-#endregion
-
-#region sub function
 int sub(int x, int y)
 {
     return x - y;
 }
 
-#endregion
-
-#region mul function
 int mul(int x, int y)
 {
     return x * y;
 }
-
-#endregion
-
-#region div function
 
 int div(int x, int y)
 {
     return x / y;
 }
 
-#endregion
-
 int? calculate(int firstNumber, int secondNumber, string mathOperation)
 {
-    int? result;
     if (mathOperation == "+")
     {
-        result = add(firstNumber, secondNumber);
+        return add(firstNumber, secondNumber);
     }
-    else if (mathOperation == "-")
-    {
-        result = sub(firstNumber, secondNumber);
-    }
-    else if (mathOperation == "*")
-    {
-        result = mul(firstNumber, secondNumber);
-    }
-    else if (mathOperation == "/")
-    {
-        result = div(firstNumber, secondNumber);
-    }
-    else
-    {
-        result = null;
-    }
-    return result;
-}
 
+    if (mathOperation == "-")
+    {
+        return sub(firstNumber, secondNumber);
+    }
+
+    if (mathOperation == "*")
+    {
+        return mul(firstNumber, secondNumber);
+    }
+
+    if (mathOperation == "/")
+    {
+        return div(firstNumber, secondNumber);
+    }
+
+    return null;
+}
 
 void main()
 {
-
     Console.WriteLine("Calculator");
+
     Console.WriteLine("Enter first number:");
-    string firstInput = Console.ReadLine();
+    var firstInput = Console.ReadLine();
     int firstNumber = int.Parse(firstInput);
+
     Console.WriteLine("Enter second number:");
-    string secondInput = Console.ReadLine();
+    var secondInput = Console.ReadLine();
     int secondNumber = int.Parse(secondInput);
+
     Console.WriteLine("Which function You want to use?");
     string mathOperation = Console.ReadLine();
-    var result = calculate(firstNumber, secondNumber, mathOperation);
-    Console.WriteLine("Result:", result);
-}
 
+    var result = calculate(firstNumber, secondNumber, mathOperation);
+    Console.WriteLine($"Result:{result}");
+}
 
 main();
