@@ -32,6 +32,33 @@ int div(int x, int y)
 
 #endregion
 
+int? calculate(int firstNumber, int secondNumber, string mathOperation)
+{
+    int? result;
+    if (mathOperation == "+")
+    {
+        result = add(firstNumber, secondNumber);
+    }
+    else if (mathOperation == "-")
+    {
+        result = sub(firstNumber, secondNumber);
+    }
+    else if (mathOperation == "*")
+    {
+        result = mul(firstNumber, secondNumber);
+    }
+    else if (mathOperation == "/")
+    {
+        result = div(firstNumber, secondNumber);
+    }
+    else
+    {
+        result = null;
+    }
+    return result;
+}
+
+
 void main()
 {
 
@@ -44,37 +71,8 @@ void main()
     int secondNumber = int.Parse(secondInput);
     Console.WriteLine("Which function You want to use?");
     string mathOperation = Console.ReadLine();
-
-    int result;
-
-    if (mathOperation == "+")
-    {
-        result = add(firstNumber, secondNumber);
-        Console.WriteLine(result);
-
-    }
-    else if (mathOperation == "-")
-    {
-        result = sub(firstNumber, secondNumber);
-        Console.WriteLine(result);
-
-    }
-    else if (mathOperation == "*")
-    {
-        result = mul(firstNumber, secondNumber);
-        Console.WriteLine(result);
-
-    }
-    else if (mathOperation == "/")
-    {
-        result = div(firstNumber, secondNumber);
-        Console.WriteLine(result);
-
-    }
-    else
-    {
-        Console.WriteLine("Wrong function");
-    }
+    var result = calculate(firstNumber, secondNumber, mathOperation);
+    Console.WriteLine("Result:", result);
 }
 
 
