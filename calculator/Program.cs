@@ -8,27 +8,30 @@ int div(int x, int y) => x / y;
 
 int? calculate(int firstNumber, int secondNumber, string mathOperation)
 {
-    if (mathOperation == "+")
+    int? result;
+    switch (mathOperation)
     {
-        return add(firstNumber, secondNumber);
-    }
+        case "+":
+            result = add(firstNumber, secondNumber);
+            break;
 
-    if (mathOperation == "-")
-    {
-        return sub(firstNumber, secondNumber);
-    }
+        case "-":
+            result = sub(firstNumber, secondNumber);
+            break;
 
-    if (mathOperation == "*")
-    {
-        return mul(firstNumber, secondNumber);
-    }
+        case "*":
+            result = mul(firstNumber, secondNumber);
+            break;
 
-    if (mathOperation == "/")
-    {
-        return div(firstNumber, secondNumber);
-    }
+        case "/":
+            result = div(firstNumber, secondNumber);
+            break;
 
-    return null;
+        default:
+            result = null;
+            break;
+    }
+    return result;
 }
 
 void main()
